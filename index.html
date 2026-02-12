@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ALPACA GENERATOR</title>
+    <meta charset="utf-8">
+    <style id="styles">
+        body {
+            background-color: #eeecee;
+        }
+
+        @font-face {
+            font-family: "opinion";
+            src: url("opinion-pro-extrabold.otf");
+        }
+
+        @font-face {
+            font-family: "opin";
+            src: url("Mint Type - Opinion Pro Light.otf");
+        }
+
+        .top {
+            position: absolute;
+            left: 95px;
+            top: -20px;
+            font-family: opinion;
+            font-size: 30px;
+            letter-spacing: 3px;
+            word-spacing: 3px;
+            color: #001434;
+        }
+
+        #download {
+            position: absolute;
+            top: 635px;
+            left: 180px;
+            font-family: "opin";
+            background-color: #eeecee;
+            border: solid #48906b;
+            border-width: 3px;
+            border-radius: 40px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #48906b;
+            cursor: pointer;
+            width: 130px;
+            height: 60px;
+            transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        #download:hover {
+            transform: translateY(-3px);
+            background-color: #23906b;
+            border-color: #23906b;
+            color: white;
+            box-shadow: 0 3px 9px rgb(107, 107, 107);
+        }
+
+        #download:active {
+            transform: translateY(1px) scale(0.98);
+        }
+
+        #rand {
+            position: absolute;
+            top: 635px;
+            right: 1060px;
+            font-family: "opin";
+            background-color: #eeecee;
+            border: solid #8064b7;
+            border-width: 3px;
+            border-radius: 40px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #8064b7;
+            cursor: pointer;
+            width: 130px;
+            height: 60px;
+            transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+        }
+        #rand:hover{
+            transform: translateY(-3px);
+            background-color: #6f4eb1;
+            border-color: #6f4eb1;
+            color: white;
+            box-shadow: 0 3px 9px rgb(107, 107, 107);
+        }
+        #rand:active{
+            transform: translateY(1px) scale(0.98);
+        }
+
+        #p1 {
+            position: absolute;
+            left: 750px;
+            top: 85px;
+            font-family: "opinion";
+            font-size: 21px;
+            text-transform: uppercase;
+            color: #001434;
+        }
+
+        #p2 {
+            position: absolute;
+            display: none;
+            font-family: "opinion";
+            font-size: 21px;
+            text-transform: uppercase;
+            color: #001434;
+        }
+
+        .cl3 {
+            font-family: "opin";
+            transform: translateY(-3px);
+            background-color: #23509c;
+            border: solid #23509c;
+            border-width: 3px;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 3px 9px rgb(107, 107, 107);
+            cursor: pointer;
+        }
+
+        .cl4 {
+            font-family: "opin";
+            transform: translateY(-3px);
+            background-color: #23509c !important;
+            border: solid #23509c !important;
+            border-width: 3px;
+            font-size: 20px;
+            font-weight: 700;
+            color: white !important;
+            box-shadow: 0 3px 9px rgb(107, 107, 107);
+            cursor: pointer;
+        }
+
+        .cl {
+            font-family: "opin";
+            background-color: #eeecee;
+            border: solid #87aff4;
+            border-width: 3px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #87aff4;
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cl:hover {
+            transform: translateY(-3px);
+            background-color: #23509c;
+            border-color: #23509c;
+            color: white;
+            box-shadow: 0 3px 9px rgb(107, 107, 107);
+        }
+
+        .cl:active {
+            transform: translateY(1px) scale(0.98);
+        }
+
+        .cl2 button {
+            font-family: "opin";
+            background-color: #eeecee;
+            border: solid #87aff4;
+            border-width: 3px;
+            border-radius: 40px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #87aff4;
+            width: 130px;
+            height: 60px;
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cl2 button:hover {
+            transform: translateY(-3px);
+            background-color: #23509c;
+            border-color: #23509c;
+            color: white;
+            box-shadow: 0 3px 9px rgb(107, 107, 107);
+        }
+
+        .cl2 button:active {
+            transform: translateY(1px) scale(0.98);
+        }
+
+        #background {
+            position: absolute;
+            display: none;
+            flex-direction: row;
+            gap: 20px;
+            top: 450px;
+            left: 620px;
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        #acces {
+            position: absolute;
+            display: none;
+            flex-direction: row;
+            gap: 20px;
+            top: 450px;
+            left: 750px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        #hrbt {
+            position: absolute;
+            display: none;
+            flex-direction: row;
+            gap: 20px;
+            top: 450px;
+            left: 750px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        #nkbt {
+            position: absolute;
+            display: none;
+            flex-direction: row;
+            gap: 20px;
+            top: 450px;
+            left: 750px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        #moth {
+            position: absolute;
+            display: none;
+            flex-direction: row;
+            gap: 20px;
+            top: 450px;
+            left: 750px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        #eys {
+            position: absolute;
+            display: none;
+            flex-direction: row;
+            gap: 20px;
+            top: 450px;
+            left: 750px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        #ers {
+            position: absolute;
+            display: none;
+            flex-direction: row;
+            gap: 20px;
+            top: 450px;
+            left: 750px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        #legbt {
+            position: absolute;
+            display: none;
+            flex-direction: row;
+            gap: 20px;
+            top: 450px;
+            left: 750px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        #s2 {
+            position: absolute;
+            top: 290px;
+            border-radius: 40px;
+            left: 980px;
+            width: 200px;
+            height: 60px;
+        }
+
+        #mouth {
+            position: absolute;
+            top: 220px;
+            left: 750px;
+            border-radius: 40px;
+            width: 130px;
+            height: 60px;
+        }
+
+        #neck {
+            position: absolute;
+            top: 220px;
+            left: 900px;
+            border-radius: 40px;
+            width: 130px;
+            height: 60px;
+        }
+
+        #leg {
+            position: absolute;
+            top: 220px;
+            left: 1050px;
+            border-radius: 40px;
+            width: 130px;
+            height: 60px;
+        }
+
+        #hair {
+            position: absolute;
+            top: 150px;
+            left: 750px;
+            border-radius: 40px;
+            width: 130px;
+            height: 60px;
+        }
+
+        #eyes {
+            position: absolute;
+            top: 150px;
+            left: 1050px;
+            border-radius: 40px;
+            width: 130px;
+            height: 60px;
+        }
+
+        #ears {
+            position: absolute;
+            top: 150px;
+            left: 900px;
+            border-radius: 40px;
+            width: 130px;
+            height: 60px;
+        }
+
+        #access {
+            position: absolute;
+            top: 290px;
+            left: 750px;
+            border-radius: 40px;
+            width: 200px;
+            height: 60px;
+        }
+
+        .imgs1 img {
+            position: absolute;
+            top: 110px;
+            left: 100px;
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <h1>ALPACA GENERATOR</h1>
+    </div>
+    <p id="p1">Accessorize The ALPACA’S</p>
+    <p id="p2">Style</p>
+    <div class="imgs1" style="-webkit-user-drag: none; user-select: none;">
+        <img id="back" src="alpaca/backgrounds/darkblue50.png">
+        <img id="er" src="alpaca/ears/default.png">
+        <img id="nk" src="alpaca/neck/default.png">
+        <img id="ns" src="alpaca/nose.png">
+        <img id="mth" src="alpaca/mouth/default.png">
+        <img id="lg" src="alpaca/leg/default.png">
+        <img id="hr" src="alpaca/hair/default.png">
+        <img id="aces" style="display: none;">
+        <img id="ey" src="alpaca/eyes/default.png" draggable="false">
+    </div>
+
+
+    <button class="cl" id="s2" onclick="s12(this.id)">Background</button>
+    <button class="cl" id="mouth" onclick="s18(this.id)">Mouth</button>
+    <button class="cl" id="leg" onclick="s20(this.id)">Leg</button>
+    <button id="hair" class="cl" onclick="s17(this.id)">Hair</button>
+    <button id="ears" class="cl" onclick="s24(this.id)">Ears</button>
+    <button id="eyes" class="cl" onclick="s22(this.id)">Eyes</button>
+    <button id="access" class="cl" onclick="s14(this.id)">Accessories</button>
+    <button id="neck" class="cl" onclick="s26(this.id)">Neck</button>
+
+    <div class="cl2" id="background" class="cl222" style="display: none;">
+        <button value="blue50" onclick="s11(this.value); main2('background', this.value);">Blue50</button>
+        <button value="blue60" onclick="s11(this.value); main2('background', this.value);">Blue60</button>
+        <button value="blue70" onclick="s11(this.value); main2('background', this.value);">Blue70</button>
+        <button value="darkblue30" onclick="s11(this.value); main2('background', this.value);">DarkBlue30</button>
+        <button value="darkblue50" class="cl4"
+            onclick="s11(this.value); main2('background', this.value);">DarkBlue50</button>
+        <button value="darkblue70" onclick="s11(this.value); main2('background', this.value);">DarkBlue70</button>
+        <button value="green50" onclick="s11(this.value); main2('background', this.value);">Green50</button>
+        <button value="green60" onclick="s11(this.value); main2('background', this.value);">Green60</button>
+        <button value="green70" onclick="s11(this.value); main2('background', this.value);">Green70</button>
+        <button value="grey40" onclick="s11(this.value); main2('background', this.value);">Grey40</button>
+        <button value="grey70" onclick="s11(this.value); main2('background', this.value);">Grey70</button>
+        <button value="grey80" onclick="s11(this.value); main2('background', this.value);">Grey80</button>
+        <button value="red50" onclick="s11(this.value); main2('background', this.value);">Red50</button>
+        <button value="red60" onclick="s11(this.value); main2('background', this.value);">Red60</button>
+        <button value="red70" onclick="s11(this.value); main2('background', this.value);">Red70</button>
+        <button value="yellow50" onclick="s11(this.value); main2('background', this.value);">Yellow50</button>
+        <button value="yellow60" onclick="s11(this.value); main2('background', this.value);">Yellow60</button>
+        <button value="yellow70" onclick="s11(this.value); main2('background', this.value);">Yellow70</button>
+    </div>
+
+
+    <div class="cl2" id="moth" style="display: none;">
+        <button value="astonished" onclick="s19(this.value); main2('moth', this.value);">Astonished</button>
+        <button class="cl4" value="default" onclick="s19(this.value); main2('moth', this.value);">Default</button>
+        <button value="laugh" onclick="s19(this.value); main2('moth', this.value);">Laugh</button>
+        <button value="tongue" onclick="s19(this.value); main2('moth', this.value);">Tongue</button>
+        <button value="eating" onclick="s19(this.value); main2('moth', this.value);">Eating</button>
+    </div>
+
+
+
+    <div id="legbt" class="cl2" style="display: none;">
+        <button value="bubble-tea" onclick="s21(this.value); main2('legbt', this.value);">Bubble-Tea</button>
+        <button value="cookie" onclick="s21(this.value); main2('legbt', this.value);">Cookie</button>
+        <button class="cl4" value="default" onclick="s21(this.value); main2('legbt', this.value);">Default</button>
+        <button value="game-console" onclick="s21(this.value); main2('legbt', this.value);">Game-Console</button>
+        <button value="tilt-backward" onclick="s21(this.value); main2('legbt', this.value);">Tilt-Backward</button>
+        <button value="tilt-forward" onclick="s21(this.value); main2('legbt', this.value);">Tilt-Forward</button>
+    </div>
+
+
+    <div class="cl2" id="hrbt" style="display: none;">
+        <button value="bang" onclick="s16(this.value); main2('hrbt', this.value);">Bang</button>
+        <button value="curls" onclick="s16(this.value); main2('hrbt', this.value);">Curls</button>
+        <button class="cl4" value="default" onclick="s16(this.value); main2('hrbt', this.value);">Default</button>
+        <button value="elegant" onclick="s16(this.value); main2('hrbt', this.value);">Elegant</button>
+        <button value="fancy" onclick="s16(this.value); main2('hrbt', this.value);">Fancy</button>
+        <button value="short" onclick="s16(this.value); main2('hrbt', this.value);">Short</button>
+    </div>
+
+
+    <div id="eys" class="cl2" style="display: none;">
+        <button value="angry" onclick="s23(this.value); main2('eys', this.value);">Angry</button>
+        <button class="cl4" value="default" onclick="s23(this.value); main2('eys', this.value);">Default</button>
+        <button value="naughty" onclick="s23(this.value); main2('eys', this.value);">Naughty</button>
+        <button value="panda" onclick="s23(this.value); main2('eys', this.value);">Panda</button>
+        <button value="smart" onclick="s23(this.value); main2('eys', this.value);">Smart</button>
+        <button value="star" onclick="s23(this.value); main2('eys', this.value);">Star</button>
+    </div>
+
+
+    <div id="ers" class="cl2" style="display: none;">
+        <button class="cl4" value="default" onclick="s25(this.value); main2('ers', this.value);">Default</button>
+        <button value="tilt-backward" onclick="s25(this.value); main2('ers', this.value);">Tilt-Backward</button>
+        <button value="tilt-forward" onclick="s25(this.value); main2('ers', this.value);">Tilt-Forward</button>
+    </div>
+
+
+    <div id="acces" class="cl2" style="display: none;">
+        <button value="earings" onclick="s13(this.value); main2('acces', this.value);">Earings</button>
+        <button value="flower" onclick="s13(this.value); main2('acces', this.value);">Flower</button>
+        <button value="glasses" onclick="s13(this.value); main2('acces', this.value);">Glasses</button>
+        <button value="headphone" onclick="s13(this.value); main2('acces', this.value);">HeadPhone</button>
+        <button class="cl4" value="none" onclick="s15(); main2('acces', this.value);">None</button>
+    </div>
+
+
+    <div id="nkbt" class="cl2" style="display: none;">
+        <button value="bend-backward" onclick="s27(this.value); main2('nkbt', this.value);">Bend-Backward</button>
+        <button value="bend-forward" onclick="s27(this.value); main2('nkbt', this.value);">Bend-Forward</button>
+        <button class="cl4" value="default" onclick="s27(this.value); main2('nkbt', this.value);">Default</button>
+        <button value="thick" onclick="s27(this.value); main2('nkbt', this.value);">Thick</button>
+    </div>
+
+
+
+    <button id="download" onclick="im()">Download</button>
+
+    <button id="rand" onclick="ranfolder()">Random</button>
+
+    <script>
+        
+
+
+        function main(id) {
+            let h = document.getElementById(id);
+            h.classList.replace("cl", "cl3");
+        }
+
+        function rem2(id) {
+            let h = document.getElementById(id).querySelectorAll("button.cl4");
+            h.forEach(e => { e.classList.remove("cl4") });
+        }
+
+        function main2(id, value) {
+            rem2(id);
+            let h = document.getElementById(id);
+            let c = h.querySelectorAll(`button[value="${value}"]`);
+            c.forEach(e => { e.classList.add("cl4") });
+        }
+
+
+        function rem() {
+            let h = document.getElementsByClassName("cl3");
+            Array.from(h).forEach(el => {
+                el.classList.replace("cl3", "cl");
+            });
+        }
+
+
+        function hide() {
+            document.querySelectorAll(".cl2").forEach(el => { el.style.display = "none"; });
+        }
+
+        function ranfolder() {
+
+
+            const folders = ["aces", "back", "er", "ey", "hr", "lg", "mth", "nk"];
+            const images = {
+                aces: ["accessories","acces", "earings", "flower", "glasses", "headphone"],
+
+                back: ["backgrounds","background", "blue50", "blue60", "blue70", "darkblue30", "darkblue50", "darkblue70",
+                    "green50", "green60", "green70", "grey40", "grey70", "grey80",
+                    "red50", "red60", "red70", "yellow50", "yellow60", "yellow70"],
+
+                er: ["ears","ers", "default", "tilt-backward", "tilt-forward"],
+
+                ey: ["eyes","eys", "angry", "default", "naughty", "panda", "smart", "star"],
+
+                hr: ["hair","hrbt", "bang", "curls", "default", "elegant", "fancy", "short"],
+
+                lg: ["leg","legbt", "bubble-tea", "cookie", "default", "game-console", "tilt-backward", "tilt-forward"],
+
+                mth: ["mouth","moth", "astonished", "default", "eating", "laugh", "tongue"],
+
+                nk: ["neck","nkbt", "bend-backward", "bend-forward", "default", "thick"]
+            }
+            folders.forEach(e => {
+                    const h = images[e][2 + Math.floor(Math.random() * (images[e].length - 2))];
+                    const c = document.getElementById(e);
+                    c.src = `alpaca/${images[e][0]}/${h}.png`;
+                    if (e === 'aces') c.style.display = 'block';
+                    main2(images[e][1],h)
+                });
+
+
+
+            }
+
+
+        function s11(value) {
+            let img = document.getElementById("back");
+            img.src = "alpaca/backgrounds/" + value + ".png";
+            img.style.display = "block";
+        }
+        function s12(id) {
+            hide();
+            rem();
+            main(id);
+            document.getElementById("p2").style.display = "block";
+            document.getElementById("p2").style.left = "650px";
+            document.getElementById("p2").style.top = "385px";
+            let bcrd = document.getElementById("background");
+            bcrd.style.display = "grid";
+        }
+
+
+        function s13(value) {
+            let img = document.getElementById("aces");
+            document.getElementById("aces").style.zIndex = 9;
+            img.src = "alpaca/accessories/" + value + ".png";
+            img.style.display = "block";
+        }
+        function s14(id) {
+            hide();
+            rem();
+            main(id);
+            let acs = document.getElementById("acces");
+            document.getElementById("p2").style.display = "block";
+            document.getElementById("p2").style.left = "750px";
+            document.getElementById("p2").style.top = "385px"
+            acs.style.display = "grid";
+        }
+        function s15() {
+            let img = document.getElementById("aces");
+            img.style.display = "none";
+        }
+
+
+        function s16(value) {
+            let img = document.getElementById("hr");
+            if (document.getElementById("aces").src.includes("headphone.png")) {
+                img.src = "alpaca/hair/" + value + ".png"
+                let ac = document.getElementById("aces");
+                ac.style.zIndex = 7;
+                img.style.zIndex = 8;
+                document.getElementById("ey").style.zIndex = 9;
+            }
+            else {
+                if (document.getElementById("hr").src.includes("curls.png")) {
+                    document.getElementById("hr").src = "alpaca/hair/" + value + ".png"
+                }
+
+                else {
+                    document.getElementById("hr").src = "alpaca/hair/" + value + ".png"
+                }
+            }
+        }
+        function s17(id) {
+            hide();
+            rem();
+            main(id);
+            document.getElementById("p2").style.display = "block";
+            document.getElementById("p2").style.left = "750px";
+            document.getElementById("p2").style.top = "385px";
+            let hrbt = document.getElementById("hrbt");
+            hrbt.style.display = "grid";
+        }
+
+
+        function s18(id) {
+            hide();
+            rem();
+            main(id);
+            document.getElementById("moth").style.display = "grid";
+            document.getElementById("p2").style.display = "block";
+            document.getElementById("p2").style.left = "750px";
+            document.getElementById("p2").style.top = "385px"
+        }
+        function s19(value) {
+            document.getElementById("mth").src = "alpaca/mouth/" + value + ".png";
+        }
+
+
+        function s20(id) {
+            hide();
+            rem();
+            main(id);
+            document.getElementById("legbt").style.display = "grid";
+            document.getElementById("p2").style.display = "block";
+            document.getElementById("p2").style.left = "750px";
+            document.getElementById("p2").style.top = "385px"
+        }
+        function s21(value) {
+            document.getElementById("lg").src = "alpaca/leg/" + value + ".png";
+        }
+
+
+        function s22(id) {
+            hide();
+            rem();
+            main(id);
+            document.getElementById("eys").style.display = "grid";
+            document.getElementById("p2").style.display = "block";
+            document.getElementById("p2").style.left = "750px";
+            document.getElementById("p2").style.top = "385px"
+        }
+        function s23(value) {
+            document.getElementById("ey").src = "alpaca/eyes/" + value + ".png"
+        }
+
+
+        function s24(id) {
+            hide();
+            rem();
+            main(id);
+            document.getElementById("ers").style.display = "grid";
+            document.getElementById("p2").style.display = "block";
+            document.getElementById("p2").style.left = "750px";
+            document.getElementById("p2").style.top = "385px"
+        }
+        function s25(value) {
+            document.getElementById("er").src = "alpaca/ears/" + value + ".png";
+        }
+
+
+        function s26(id) {
+            hide();
+            rem();
+            main(id);
+            document.getElementById("nkbt").style.display = "grid";
+            document.getElementById("p2").style.display = "block";
+            document.getElementById("p2").style.left = "750px";
+            document.getElementById("p2").style.top = "385px"
+        }
+        function s27(value) {
+            document.getElementById("nk").src = "alpaca/neck/" + value + ".png";
+        }
+        function im() {
+            const imges = document.querySelectorAll(".imgs1 img");
+            const base = document.getElementById("back");
+            const canv = document.createElement("canvas");
+            const ctx = canv.getContext("2d");
+            canv.width = base.naturalWidth;
+            canv.height = base.naturalHeight;
+            ctx.drawImage(base, 0, 0, canv.width, canv.height);
+            imges.forEach(img => {
+                if (img.style.display !== "none") {
+                    ctx.drawImage(img, 0, 0, canv.width, canv.height);
+                }
+            });
+            const final = canv.toDataURL("image/png");
+
+            const link = document.createElement('a');
+            link.href = final;
+            link.download = 'alpaca.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            canv.style.display = "none";
+        }
+
+        
+
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
