@@ -1,0 +1,318 @@
+body {
+    background-color: #eeecee;
+}
+
+@font-face {
+    font-family: "opinion";
+    src: url("opinion-pro-extrabold.otf");
+}
+
+@font-face {
+    font-family: "opin";
+    src: url("Mint Type - Opinion Pro Light.otf");
+}
+
+.top {
+    font-family: opinion;
+    font-size: 60px;
+    letter-spacing: 3px;
+    word-spacing: 3px;
+    color: #001434;
+    padding: 20px;
+    padding-left: 3vw;
+}
+
+#btns2 {
+    display: flex;
+}
+
+#download {
+    font-family: "opin";
+    background-color: #eeecee;
+    border: solid #48906b;
+    border-width: 3px;
+    border-radius: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #48906b;
+    cursor: pointer;
+    width: 130px;
+    height: 60px;
+    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#download:hover {
+    transform: translateY(-3px);
+    background-color: #23906b;
+    border-color: #23906b;
+    color: white;
+    box-shadow: 0 3px 9px rgb(107, 107, 107);
+}
+
+#download:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+#rand {
+    top: 635px;
+    right: 1060px;
+    font-family: "opin";
+    background-color: #eeecee;
+    border: solid #8064b7;
+    border-width: 3px;
+    border-radius: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #8064b7;
+    cursor: pointer;
+    width: 130px;
+    height: 60px;
+    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#rand:hover {
+    transform: translateY(-3px);
+    background-color: #6f4eb1;
+    border-color: #6f4eb1;
+    color: white;
+    box-shadow: 0 3px 9px rgb(107, 107, 107);
+}
+
+#rand:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+#p1 {
+    left: 750px;
+    top: 85px;
+    font-family: "opinion";
+    font-size: 21px;
+    text-transform: uppercase;
+    color: #001434;
+}
+
+#p2 {
+    display: none;
+    font-family: "opinion";
+    font-size: 21px;
+    text-transform: uppercase;
+    color: #001434;
+}
+
+.cl3 {
+    font-family: "opin";
+    transform: translateY(-3px);
+    background-color: #23509c;
+    border: solid #23509c;
+    border-width: 3px;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 3px 9px rgb(107, 107, 107);
+    cursor: pointer;
+}
+
+.cl4 {
+    font-family: "opin";
+    transform: translateY(-3px);
+    background-color: #23509c !important;
+    border: solid #23509c !important;
+    border-width: 3px;
+    font-size: 20px;
+    font-weight: 700;
+    color: white !important;
+    box-shadow: 0 3px 9px rgb(107, 107, 107);
+    cursor: pointer;
+}
+
+.cl {
+    font-family: "opin";
+    background-color: #eeecee;
+    border: solid #87aff4;
+    border-width: 3px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #87aff4;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cl:hover {
+    transform: translateY(-3px);
+    background-color: #23509c;
+    border-color: #23509c;
+    color: white;
+    box-shadow: 0 3px 9px rgb(107, 107, 107);
+}
+
+.cl:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+.cl2 button {
+    font-family: "opin";
+    background-color: #eeecee;
+    border: solid #87aff4;
+    border-width: 3px;
+    border-radius: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #87aff4;
+    width: 130px;
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cl2 button:hover {
+    transform: translateY(-3px);
+    background-color: #23509c;
+    border-color: #23509c;
+    color: white;
+    box-shadow: 0 3px 9px rgb(107, 107, 107);
+}
+
+.cl2 button:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+#background {
+    position: absolute;
+    display: none;
+    flex-direction: row;
+    gap: 20px;
+    top: 450px;
+    left: 620px;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+#acces {
+    position: absolute;
+    display: none;
+    flex-direction: row;
+    gap: 20px;
+    top: 450px;
+    left: 750px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#hrbt {
+    position: absolute;
+    display: none;
+    flex-direction: row;
+    gap: 20px;
+    top: 450px;
+    left: 750px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#nkbt {
+    position: absolute;
+    display: none;
+    flex-direction: row;
+    gap: 20px;
+    top: 450px;
+    left: 750px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#moth {
+    display: none;
+    flex-direction: row;
+    gap: 20px;
+    top: 450px;
+    left: 750px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#eys {
+    display: none;
+    flex-direction: row;
+    gap: 20px;
+    top: 450px;
+    left: 750px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#ers {
+    display: none;
+    flex-direction: row;
+    gap: 20px;
+    top: 450px;
+    left: 750px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#legbt {
+    display: none;
+    flex-direction: row;
+    gap: 20px;
+    top: 450px;
+    left: 750px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#s2 {
+    top: 290px;
+    border-radius: 40px;
+    left: 980px;
+    width: 200px;
+    height: 60px;
+}
+
+#mouth {
+    top: 220px;
+    left: 750px;
+    width: 130px;
+}
+
+#neck {
+    top: 220px;
+    left: 900px;
+    width: 130px;
+}
+
+#leg {
+    top: 220px;
+    left: 1050px;
+    width: 130px;
+}
+
+#hair {
+    top: 150px;
+    left: 750px;
+    width: 130px;
+}
+
+#eyes {
+    top: 150px;
+    left: 1050px;
+    width: 130px;
+}
+
+#ears {
+    top: 150px;
+    left: 900px;
+    width: 130px;
+}
+
+#access {
+    top: 290px;
+    left: 750px;
+    width: 200px;
+}
+
+#btns1 button {
+    position: absolute;
+    border-radius: 40px;
+    height: 60px;
+}
+
+.imgs img {
+    position: absolute;
+    border-radius: 40px;
+    top: 110px;
+    left: 100px;
+    width: 500px;
+    height: 500px;
+}
