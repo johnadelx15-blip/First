@@ -1,5 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+}
+
 body {
-    background-color: #eeecee;
+    background-color: #ffffff;
 }
 
 @font-face {
@@ -12,307 +23,214 @@ body {
     src: url("Mint Type - Opinion Pro Light.otf");
 }
 
-.top {
+#top {
     font-family: opinion;
     font-size: 60px;
     letter-spacing: 3px;
     word-spacing: 3px;
     color: #001434;
-    padding: 20px;
-    padding-left: 3vw;
+    text-transform: uppercase;
+    padding: 1%;
+    padding-left: 3%;
+
+    svg {
+        width: 50px;
+        height: 50px;
+        fill: #001434;
+    }
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10vw;
+    padding: 0 50px;
+    margin-top: 20px;
+    min-height: 75vh;
+}
+
+#imgs {
+    position: relative;
+    width: 590px;
+    height: 690px;
+    top: -20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+        position: absolute;
+        width: 100%;
+        border-radius: 40px;
+    }
+
+    svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    #R-D {
+        width: 90%;
+        position: absolute;
+        display: flex;
+        gap: 30px;
+        bottom: 0;
+        justify-content: center;
+    }
+
+    button {
+        flex: 1 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-family: opinion;
+        width: 190px;
+        height: 60px;
+        border: none;
+        border-radius: 40px;
+        font-size: 28px;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    #random {
+        background-color: #e0e3e6;
+        color: #003677;
+
+        svg {
+            fill: #003677;
+        }
+    }
+
+    #random:hover {
+        background: #D8DADD;
+    }
+
+    #download {
+        background-color: #003677;
+        color: white;
+
+        svg {
+            fill: white;
+        }
+    }
+
+    #download:hover {
+        background-color: #174780;
+    }
+}
+
+#btns {
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-left: -60px;
+
+    p {
+        font-size: 21px;
+        font-family: opinion;
+        color: #001434;
+        text-transform: uppercase;
+        align-self: stretch;
+        margin-left: 50px;
+    }
+
+    #p2 {
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    #p2.active {
+        opacity: 1;
+    }
+
+    button {
+        font-family: opin;
+        background-color: #ffffff;
+        border: solid #2b5caf;
+        border-width: 2px;
+        border-radius: 40px;
+        font-size: 20px;
+        font-weight: 700;
+        color: #2b5caf;
+        height: 60px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:not(.active):hover {
+        transform: translateY(-3px);
+        background-color: #003677;
+        border-color: #003677;
+        color: white;
+        box-shadow: 0 3px 9px rgb(107, 107, 107);
+    }
+
+    button:not(.active):active {
+        transform: translateY(1px) scale(0.98);
+    }
+}
+
+#btns1 {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    button {
+        flex: 1 1 calc(33.33% - 15px);
+    }
 }
 
 #btns2 {
+    opacity: 0;
+    transition: 0.3s;
+    width: 90%;
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    button {
+        flex: 1 1 calc(25% - 10px);
+    }
 }
 
-#download {
-    font-family: "opin";
-    background-color: #eeecee;
-    border: solid #48906b;
-    border-width: 3px;
-    border-radius: 40px;
-    font-size: 20px;
-    font-weight: 700;
-    color: #48906b;
-    cursor: pointer;
-    width: 130px;
-    height: 60px;
-    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+#btns2.active {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    opacity: 1;
+
+    button {
+        flex: 1 1 calc(25% - 10px);
+    }
 }
 
-#download:hover {
-    transform: translateY(-3px);
-    background-color: #23906b;
-    border-color: #23906b;
-    color: white;
-    box-shadow: 0 3px 9px rgb(107, 107, 107);
-}
-
-#download:active {
-    transform: translateY(1px) scale(0.98);
-}
-
-#rand {
-    top: 635px;
-    right: 1060px;
-    font-family: "opin";
-    background-color: #eeecee;
-    border: solid #8064b7;
-    border-width: 3px;
-    border-radius: 40px;
-    font-size: 20px;
-    font-weight: 700;
-    color: #8064b7;
-    cursor: pointer;
-    width: 130px;
-    height: 60px;
-    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-}
-
-#rand:hover {
-    transform: translateY(-3px);
-    background-color: #6f4eb1;
-    border-color: #6f4eb1;
-    color: white;
-    box-shadow: 0 3px 9px rgb(107, 107, 107);
-}
-
-#rand:active {
-    transform: translateY(1px) scale(0.98);
-}
-
-#p1 {
-    left: 750px;
-    top: 85px;
-    font-family: "opinion";
-    font-size: 21px;
-    text-transform: uppercase;
-    color: #001434;
-}
-
-#p2 {
-    display: none;
-    font-family: "opinion";
-    font-size: 21px;
-    text-transform: uppercase;
-    color: #001434;
-}
-
-.cl3 {
-    font-family: "opin";
-    transform: translateY(-3px);
-    background-color: #23509c;
-    border: solid #23509c;
-    border-width: 3px;
-    font-size: 20px;
-    font-weight: 700;
-    color: white;
-    box-shadow: 0 3px 9px rgb(107, 107, 107);
-    cursor: pointer;
-}
-
-.cl4 {
-    font-family: "opin";
-    transform: translateY(-3px);
-    background-color: #23509c !important;
-    border: solid #23509c !important;
-    border-width: 3px;
-    font-size: 20px;
-    font-weight: 700;
+button.active {
+    transform: translateY(1px);
+    background-color: #003677 !important;
+    border-color: #003677 !important;
     color: white !important;
     box-shadow: 0 3px 9px rgb(107, 107, 107);
-    cursor: pointer;
 }
 
-.cl {
-    font-family: "opin";
-    background-color: #eeecee;
-    border: solid #87aff4;
-    border-width: 3px;
-    font-size: 20px;
-    font-weight: 700;
-    color: #87aff4;
-    cursor: pointer;
-    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.cl:hover {
-    transform: translateY(-3px);
-    background-color: #23509c;
-    border-color: #23509c;
-    color: white;
-    box-shadow: 0 3px 9px rgb(107, 107, 107);
-}
-
-.cl:active {
-    transform: translateY(1px) scale(0.98);
-}
-
-.cl2 button {
-    font-family: "opin";
-    background-color: #eeecee;
-    border: solid #87aff4;
-    border-width: 3px;
-    border-radius: 40px;
-    font-size: 20px;
-    font-weight: 700;
-    color: #87aff4;
-    width: 130px;
-    height: 60px;
-    cursor: pointer;
-    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.cl2 button:hover {
-    transform: translateY(-3px);
-    background-color: #23509c;
-    border-color: #23509c;
-    color: white;
-    box-shadow: 0 3px 9px rgb(107, 107, 107);
-}
-
-.cl2 button:active {
-    transform: translateY(1px) scale(0.98);
-}
-
-#background {
-    position: absolute;
-    display: none;
-    flex-direction: row;
-    gap: 20px;
-    top: 450px;
-    left: 620px;
-    grid-template-columns: repeat(6, 1fr);
-}
-
-#acces {
-    position: absolute;
-    display: none;
-    flex-direction: row;
-    gap: 20px;
-    top: 450px;
-    left: 750px;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-#hrbt {
-    position: absolute;
-    display: none;
-    flex-direction: row;
-    gap: 20px;
-    top: 450px;
-    left: 750px;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-#nkbt {
-    position: absolute;
-    display: none;
-    flex-direction: row;
-    gap: 20px;
-    top: 450px;
-    left: 750px;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-#moth {
-    display: none;
-    flex-direction: row;
-    gap: 20px;
-    top: 450px;
-    left: 750px;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-#eys {
-    display: none;
-    flex-direction: row;
-    gap: 20px;
-    top: 450px;
-    left: 750px;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-#ers {
-    display: none;
-    flex-direction: row;
-    gap: 20px;
-    top: 450px;
-    left: 750px;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-#legbt {
-    display: none;
-    flex-direction: row;
-    gap: 20px;
-    top: 450px;
-    left: 750px;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-#s2 {
-    top: 290px;
-    border-radius: 40px;
-    left: 980px;
-    width: 200px;
-    height: 60px;
-}
-
-#mouth {
-    top: 220px;
-    left: 750px;
-    width: 130px;
-}
-
-#neck {
-    top: 220px;
-    left: 900px;
-    width: 130px;
-}
-
-#leg {
-    top: 220px;
-    left: 1050px;
-    width: 130px;
-}
-
-#hair {
-    top: 150px;
-    left: 750px;
-    width: 130px;
-}
-
-#eyes {
-    top: 150px;
-    left: 1050px;
-    width: 130px;
-}
-
-#ears {
-    top: 150px;
-    left: 900px;
-    width: 130px;
-}
-
-#access {
-    top: 290px;
-    left: 750px;
-    width: 200px;
-}
-
-#btns1 button {
-    position: absolute;
-    border-radius: 40px;
-    height: 60px;
-}
-
-.imgs img {
-    position: absolute;
-    border-radius: 40px;
-    top: 110px;
-    left: 100px;
-    width: 500px;
-    height: 500px;
+footer {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    font-family: opin;
+    font-size: 14px;
+    font-weight: 1000;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    background-color: #003677;
+    margin-top: 10px;
 }

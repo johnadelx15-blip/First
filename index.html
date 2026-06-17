@@ -1,132 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>ALPACA GENERATOR</title>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALPACA GENERATOR</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="top">
+
+    <div id="top">
+        <svg viewBox="0 -960 960 960">
+            <path
+                d="M180-475q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Zm109-189q-29-29-29-71t29-71q29-29 71-29t71 29q29 29 29 71t-29 71q-29 29-71 29t-71-29Zm240 0q-29-29-29-71t29-71q29-29 71-29t71 29q29 29 29 71t-29 71q-29 29-71 29t-71-29Zm251 189q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM266-75q-45 0-75.5-34.5T160-191q0-52 35.5-91t70.5-77q29-31 50-67.5t50-68.5q22-26 51-43t63-17q34 0 63 16t51 42q28 32 49.5 69t50.5 69q35 38 70.5 77t35.5 91q0 47-30.5 81.5T694-75q-54 0-107-9t-107-9q-54 0-107 9t-107 9Z" />
+        </svg>
         ALPACA GENERATOR
     </div>
-    <p id="p1">Accessorize The ALPACA’S</p>
-    <p id="p2">Style</p>
-    <div class="imgs" style="-webkit-user-drag: none; user-select: none;">
-        <img id="back" src="alpaca/backgrounds/darkblue50.png">
-        <img id="er" src="alpaca/ears/default.png">
-        <img id="nk" src="alpaca/neck/default.png">
-        <img id="ns" src="alpaca/nose.png">
-        <img id="mth" src="alpaca/mouth/default.png">
-        <img id="lg" src="alpaca/leg/default.png">
-        <img id="hr" src="alpaca/hair/default.png">
-        <img id="aces" style="display: none;" draggable="false">
-        <img id="ey" src="alpaca/eyes/default.png" draggable="false">
+
+    <div class="main-content">
+        <div id="imgs">
+            <img id="backgrounds-photo" src="alpaca/backgrounds/darkblue50.png">
+            <img id="ears-photo" src="alpaca/ears/default.png">
+            <img id="neck-photo" src="alpaca/neck/default.png">
+            <img id="nose-photo" src="alpaca/nose.png">
+            <img id="mouth-photo" src="alpaca/mouth/default.png">
+            <img id="leg-photo" src="alpaca/leg/default.png">
+            <img id="hair-photo" src="alpaca/hair/default.png">
+            <img id="accessories-photo">
+            <img id="eyes-photo" src="alpaca/eyes/default.png"
+                draggable="false">
+            <div id="R-D">
+                <button id="random">
+                    <svg viewBox="0 -960 960 960">
+                        <path
+                            d="M560-160v-80h104L537-367l57-57 126 126v-102h80v240H560Zm-344 0-56-56 504-504H560v-80h240v240h-80v-104L216-160Zm151-377L160-744l56-56 207 207-56 56Z" />
+                    </svg>Random</button>
+                <button id="download">
+                    <svg viewBox="0 -960 960 960">
+                        <path
+                            d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
+                    </svg>Download</button>
+            </div>
+        </div>
+
+        <div id="btns">
+            <p>Accessorize The ALPACA’S</p>
+            <div id="btns1">
+                <button id="backgrounds">Background</button>
+                <button id="mouth">Mouth</button>
+                <button id="leg">Leg</button>
+                <button id="hair">Hair</button>
+                <button id="ears">Ears</button>
+                <button id="eyes">Eyes</button>
+                <button id="accessories">Accessories</button>
+                <button id="neck">Neck</button>
+            </div>
+            <p id="p2">Style</p>
+            <div id="btns2"></div>
+        </div>
     </div>
 
-    <div id="btns1">
-        <button class="cl" id="s2" onclick="s12(this.id)">Background</button>
-        <button class="cl" id="mouth" onclick="s18(this.id)">Mouth</button>
-        <button class="cl" id="leg" onclick="s20(this.id)">Leg</button>
-        <button id="hair" class="cl" onclick="s17(this.id)">Hair</button>
-        <button id="ears" class="cl" onclick="s24(this.id)">Ears</button>
-        <button id="eyes" class="cl" onclick="s22(this.id)">Eyes</button>
-        <button id="access" class="cl" onclick="s14(this.id)">Accessories</button>
-        <button id="neck" class="cl" onclick="s26(this.id)">Neck</button>
-    </div>
-
-    <div class="cl2" id="background" class="cl222" style="display: none;">
-        <button value="blue50" onclick="s11(this.value); main2('background', this.value);">Blue50</button>
-        <button value="blue60" onclick="s11(this.value); main2('background', this.value);">Blue60</button>
-        <button value="blue70" onclick="s11(this.value); main2('background', this.value);">Blue70</button>
-        <button value="darkblue30" onclick="s11(this.value); main2('background', this.value);">DarkBlue30</button>
-        <button value="darkblue50" onclick="s11(this.value); main2('background', this.value);">DarkBlue50</button>
-        <button value="darkblue70" onclick="s11(this.value); main2('background', this.value);">DarkBlue70</button>
-        <button value="green50" onclick="s11(this.value); main2('background', this.value);">Green50</button>
-        <button value="green60" onclick="s11(this.value); main2('background', this.value);">Green60</button>
-        <button value="green70" onclick="s11(this.value); main2('background', this.value);">Green70</button>
-        <button value="grey40" onclick="s11(this.value); main2('background', this.value);">Grey40</button>
-        <button value="grey70" onclick="s11(this.value); main2('background', this.value);">Grey70</button>
-        <button value="grey80" onclick="s11(this.value); main2('background', this.value);">Grey80</button>
-        <button value="red50" onclick="s11(this.value); main2('background', this.value);">Red50</button>
-        <button value="red60" onclick="s11(this.value); main2('background', this.value);">Red60</button>
-        <button value="red70" onclick="s11(this.value); main2('background', this.value);">Red70</button>
-        <button value="yellow50" onclick="s11(this.value); main2('background', this.value);">Yellow50</button>
-        <button value="yellow60" onclick="s11(this.value); main2('background', this.value);">Yellow60</button>
-        <button value="yellow70" onclick="s11(this.value); main2('background', this.value);">Yellow70</button>
-    </div>
-
-
-    <div class="cl2" id="moth" style="display: none;">
-        <button value="astonished" onclick="s19(this.value); main2('moth', this.value);">Astonished</button>
-        <button class="cl4" value="default" onclick="s19(this.value); main2('moth', this.value);">Default</button>
-        <button value="laugh" onclick="s19(this.value); main2('moth', this.value);">Laugh</button>
-        <button value="tongue" onclick="s19(this.value); main2('moth', this.value);">Tongue</button>
-        <button value="eating" onclick="s19(this.value); main2('moth', this.value);">Eating</button>
-    </div>
-
-
-
-    <div id="legbt" class="cl2" style="display: none;">
-        <button value="bubble-tea" onclick="s21(this.value); main2('legbt', this.value);">Bubble-Tea</button>
-        <button value="cookie" onclick="s21(this.value); main2('legbt', this.value);">Cookie</button>
-        <button class="cl4" value="default" onclick="s21(this.value); main2('legbt', this.value);">Default</button>
-        <button value="game-console" onclick="s21(this.value); main2('legbt', this.value);">Game-Console</button>
-        <button value="tilt-backward" onclick="s21(this.value); main2('legbt', this.value);">Tilt-Backward</button>
-        <button value="tilt-forward" onclick="s21(this.value); main2('legbt', this.value);">Tilt-Forward</button>
-    </div>
-
-
-    <div class="cl2" id="hrbt" style="display: none;">
-        <button value="bang" onclick="s16(this.value); main2('hrbt', this.value);">Bang</button>
-        <button value="curls" onclick="s16(this.value); main2('hrbt', this.value);">Curls</button>
-        <button class="cl4" value="default" onclick="s16(this.value); main2('hrbt', this.value);">Default</button>
-        <button value="elegant" onclick="s16(this.value); main2('hrbt', this.value);">Elegant</button>
-        <button value="fancy" onclick="s16(this.value); main2('hrbt', this.value);">Fancy</button>
-        <button value="short" onclick="s16(this.value); main2('hrbt', this.value);">Short</button>
-    </div>
-
-
-    <div id="eys" class="cl2" style="display: none;">
-        <button value="angry" onclick="s23(this.value); main2('eys', this.value);">Angry</button>
-        <button class="cl4" value="default" onclick="s23(this.value); main2('eys', this.value);">Default</button>
-        <button value="naughty" onclick="s23(this.value); main2('eys', this.value);">Naughty</button>
-        <button value="panda" onclick="s23(this.value); main2('eys', this.value);">Panda</button>
-        <button value="smart" onclick="s23(this.value); main2('eys', this.value);">Smart</button>
-        <button value="star" onclick="s23(this.value); main2('eys', this.value);">Star</button>
-    </div>
-
-
-    <div id="ers" class="cl2" style="display: none;">
-        <button class="cl4" value="default" onclick="s25(this.value); main2('ers', this.value);">Default</button>
-        <button value="tilt-backward" onclick="s25(this.value); main2('ers', this.value);">Tilt-Backward</button>
-        <button value="tilt-forward" onclick="s25(this.value); main2('ers', this.value);">Tilt-Forward</button>
-    </div>
-
-
-    <div id="acces" class="cl2" style="display: none;">
-        <button value="earings" onclick="s13(this.value); main2('acces', this.value);">Earings</button>
-        <button value="flower" onclick="s13(this.value); main2('acces', this.value);">Flower</button>
-        <button value="glasses" onclick="s13(this.value); main2('acces', this.value);">Glasses</button>
-        <button value="headphone" onclick="s13(this.value); main2('acces', this.value);">HeadPhone</button>
-        <button class="cl4" value="none" onclick="s15(); main2('acces', this.value);">None</button>
-    </div>
-
-
-    <div id="nkbt" class="cl2" style="display: none;">
-        <button value="bend-backward" onclick="s27(this.value); main2('nkbt', this.value);">Bend-Backward</button>
-        <button value="bend-forward" onclick="s27(this.value); main2('nkbt', this.value);">Bend-Forward</button>
-        <button class="cl4" value="default" onclick="s27(this.value); main2('nkbt', this.value);">Default</button>
-        <button value="thick" onclick="s27(this.value); main2('nkbt', this.value);">Thick</button>
-    </div>
-
-
-    <div id="btns2">
-        <button id="download" onclick="im()">Download</button>
-        <button id="rand" onclick="ranfolder()">Random</button>
-    </div>
+    <footer>Designed & Developed by John Adel • © 2026</footer>
 
     <script src="script.js"></script>
 </body>
